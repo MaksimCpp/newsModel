@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import TextField, DateTimeField, ImageField, ForeignKey
+from django.db.models import DateTimeField, ForeignKey, ImageField, TextField
 from django.forms import CharField
 
 
