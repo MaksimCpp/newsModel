@@ -1,0 +1,4 @@
+.env
+/news/migrations/
+/news/__pycache__/
+/kiosk/__pycache__/
