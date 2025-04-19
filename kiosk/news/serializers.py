@@ -1,5 +1,6 @@
-from .models import NewsImages, News
 from rest_framework import serializers
+
+from .models import News, NewsImages
 
 
 class ImagesSerializer(serializers.ModelSerializer):

@@ -1,5 +1,4 @@
 from django.db import models
-from django.forms import CharField
 
 
 class News(models.Model):
@@ -11,5 +10,5 @@ class News(models.Model):
 
 # Картинки
 class NewsImages(models.Model):
-     news = models.ForeignKey(News, on_delete=models.CASCADE)
-     image = models.ImageField(upload_to='images/')
+    news = models.ForeignKey(News, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='images/')
