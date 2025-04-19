@@ -1,0 +1,6 @@
+/kiosk/news/__pycache__/
+/kiosk/news/migrations/
+/.idea/
+/env/
+/kiosk/.env/
+/kiosk/kiosk/__pycache__/
