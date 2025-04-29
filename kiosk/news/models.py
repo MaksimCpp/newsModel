@@ -10,10 +10,6 @@ class News(models.Model):
 
 # Картинки
 class NewsImages(models.Model):
-<<<<<<< HEAD
-    news = ForeignKey(News, on_delete=models.CASCADE, related_name='images')
-    image = ImageField(upload_to='images/')
-=======
-    news = models.ForeignKey(News, on_delete=models.CASCADE)
+    news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='images/')
->>>>>>> 52eaa2a3857b3d4e29f6d169cd6b6f4d00287f7e
+

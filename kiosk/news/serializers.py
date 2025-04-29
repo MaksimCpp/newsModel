@@ -1,10 +1,8 @@
 from rest_framework import serializers
 
-<<<<<<< HEAD
+
 from news.models import News, NewsImages
-=======
-from .models import News, NewsImages
->>>>>>> 52eaa2a3857b3d4e29f6d169cd6b6f4d00287f7e
+from news.models import News, NewsImages
 
 
 class ImagesSerializer(serializers.ModelSerializer):
@@ -14,7 +12,6 @@ class ImagesSerializer(serializers.ModelSerializer):
 
 
 class NewsSerializer(serializers.ModelSerializer):
-<<<<<<< HEAD
     images = ImagesSerializer(many=True, required=False)
 
     class Meta:
@@ -22,7 +19,7 @@ class NewsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
-        images = self.context.get('request').FILES.getlist('images') # DeepSeek
+        images = self.context.get('request').FILES.getlist('images')
         news = News.objects.create(**validated_data)
 
         for image in images:
@@ -31,7 +28,7 @@ class NewsSerializer(serializers.ModelSerializer):
         return news
     
     def update(self, instance, validated_data):
-        images = self.context.get('request').FILES.getlist('images') # DeepSeek
+        images = self.context.get('request').FILES.getlist('images') 
         instance.title = validated_data.get('title', instance.title)
         instance.short_text = validated_data.get('short_text', instance.short_text)
         instance.long_text = validated_data.get('long_text', instance.long_text)
@@ -40,12 +37,3 @@ class NewsSerializer(serializers.ModelSerializer):
             NewsImages.objects.create(news=instance, image=image)
 
         return instance
-=======
-    class Meta:
-        model = News
-        fields = ('id', 'title', 'date', 'short_text', 'long_text', 'images')
-
-
-class NewsImagesSerializer(NewsSerializer):
-    images = ImagesSerializer(many=True, required=False)
->>>>>>> 52eaa2a3857b3d4e29f6d169cd6b6f4d00287f7e
