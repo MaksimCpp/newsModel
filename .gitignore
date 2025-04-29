@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .idea/
 images/
 news/migrations/
@@ -176,3 +177,11 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+=======
+/kiosk/news/__pycache__/
+/kiosk/news/migrations/
+/.idea/
+/env/
+/kiosk/.env/
+/kiosk/kiosk/__pycache__/
+>>>>>>> 52eaa2a3857b3d4e29f6d169cd6b6f4d00287f7e

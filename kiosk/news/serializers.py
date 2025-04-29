@@ -1,6 +1,10 @@
 from rest_framework import serializers
 
+<<<<<<< HEAD
 from news.models import News, NewsImages
+=======
+from .models import News, NewsImages
+>>>>>>> 52eaa2a3857b3d4e29f6d169cd6b6f4d00287f7e
 
 
 class ImagesSerializer(serializers.ModelSerializer):
@@ -10,6 +14,7 @@ class ImagesSerializer(serializers.ModelSerializer):
 
 
 class NewsSerializer(serializers.ModelSerializer):
+<<<<<<< HEAD
     images = ImagesSerializer(many=True, required=False)
 
     class Meta:
@@ -35,3 +40,12 @@ class NewsSerializer(serializers.ModelSerializer):
             NewsImages.objects.create(news=instance, image=image)
 
         return instance
+=======
+    class Meta:
+        model = News
+        fields = ('id', 'title', 'date', 'short_text', 'long_text', 'images')
+
+
+class NewsImagesSerializer(NewsSerializer):
+    images = ImagesSerializer(many=True, required=False)
+>>>>>>> 52eaa2a3857b3d4e29f6d169cd6b6f4d00287f7e
